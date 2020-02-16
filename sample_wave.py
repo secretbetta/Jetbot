@@ -13,16 +13,14 @@ BUFFER_SIZE = 256
 
 
 audio = wave.open(AUDIO_FILE)
-print("Audio framerate: " + str(audio.getframerate()))
-
 if audio.getsampwidth() != 2:
-  print("%s: wrong sample width (must be 16-bit)" % AUDIO_FILE)
+  print("%s: wrong sample width (must be 16-bit)" % fname)
   sys.exit()
 if audio.getframerate() != 8000 and audio.getframerate() != 16000:
-  print("%s: unsupported sampling frequency (must be either 8 or 16 khz)" % AUDIO_FILE)
+  print("%s: unsupported sampling frequency (must be either 8 or 16 khz)" % fname)
   sys.exit()
 if audio.getnchannels() != 1:
-  print("%s: must be single channel (mono)" % AUDIO_FILE)
+  print("%s: must be single channel (mono)" % fname)
   sys.exit()
 
 
